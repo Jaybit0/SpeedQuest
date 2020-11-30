@@ -14,7 +14,6 @@ install_dependencies:
     - cd server
   script:
     - npm install
-  after_script:
     - ls 
 
 foreverdeploy:
