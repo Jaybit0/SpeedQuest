@@ -19,5 +19,7 @@ install_dependencies:
 foreverdeploy:
   stage: deploy
   before_script:
+    - ls
+    - ls server
     - forever stop server/server.js || true
   script: forever start server/server.js -k ~/server.key -c ~/server.crt
