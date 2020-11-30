@@ -1,0 +1,22 @@
+image: node:latest
+
+stages:
+  - build
+  - deploy
+
+cache:
+  paths:
+    - node_modules/
+
+install_dependencies:
+  stage: build
+  before_script:
+    - cd server
+  script:
+    - npm install
+
+foreverdeploy:
+  stage: deploy
+  before_script:
+    - forever stop node/server.js || true
+  script: forever start node/server.js -k ~/server.key -c ~/server.crt

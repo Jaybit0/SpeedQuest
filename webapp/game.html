@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+	<title>SpeedQuest - Game</title>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+
+	<link rel="stylesheet" href="dist/css/bootstrap-grid.min.css" />
+	<link rel="stylesheet" href="stylesheets/game.css" />
+	<script defer language="javascript" src="scripts/listmanager.js" type="text/javascript"></script>
+	<script defer language="javascript" src="scripts/tempview.js" type="text/javascript"></script>
+	<script defer language="javascript" src="scripts/game.js" type="text/javascript"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+	<header>
+		<nav>
+			<div class="nav-item">
+					SpeedQuest
+			</div>
+		</nav>
+	</header>
+	<main>
+		<div class="bootstrap-wrapper">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-3">
+						<h2 class="spacer">Aktionen</h2>
+						<div id="nextcontroll">
+							<button onclick="">Fertig</button>
+						</div>
+
+
+					</div>
+					<div class="col-lg-6">
+												
+					</div>
+					<div class="col-lg-3 playercontainer">
+						<h2>Spieler</h2>
+						<div id="playerlist" class="playerlist">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</main>
+
+	<div id="taskPopup" class="taskpopup">
+
+	  <div class="task-content">
+		<span class="finish">&#10004;</span>
+		<p>Some text in the Modal..</p>
+	  </div>
+
+	</div>
+
+</body>
+
+<template id="playerListItemTemplate">
+	<div class="playerlist-item">
+		<img class="currplayer-status" />
+		<img class="trottelmuetze-status" />
+		<img alt="." class="online-status" />
+		<a href="#" class="username">Jonas</a>
+	</div>
+
+</template>
+
+<template id="playerCardItemTemplate">
+	<div class="playercards col-lg-6" onclick="playCard(this.id)">
+		<p class="cardheader"></p>
+		<p class="carddescr"></p>
+		<p class="carddescrlong"></p>
+	</div>
+
+</template>
+
+</html>

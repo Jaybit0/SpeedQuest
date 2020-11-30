@@ -1,0 +1,200 @@
+html {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	margin: 0;
+	height: 100%;
+	width: 100%;
+	font-family: "Verdana";
+}
+
+header {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-content: center;
+	height: 2em;
+	background-color: #ddf;
+}
+
+header > nav{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-content: center;
+	padding: 0 1em 0 0;
+}
+
+header > nav > .nav-item {
+	height: 100%;
+}
+
+header > nav > .nav-item > a{
+	height: calc(100% - 2em);
+	color: #555;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-content: center;
+	padding: 1em 1em;
+	font-size: 1em;
+}
+
+header > nav > .nav-item > a:hover{
+	background-color: #ddd;
+}
+
+header > #userSettings{
+	width: 5em;
+	height: 100%;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-content: center;
+}
+
+ .dropdown {
+	position: relative;
+	display: inline-block;
+	padding: 0.25em 0.5em;
+	width: calc(50% - 1em);
+}
+
+.dropdown > .dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f1f1f1;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 10000;
+	right: 0;
+}
+
+.dropdown > .dropdown-content > a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown > .dropdown-content a:hover {
+	background-color: #ddd;
+}
+
+.dropdown:hover > .dropdown-content {
+	display: block;
+}
+
+header > #userSettings > a{
+	padding: 0.25em 0.5em;
+	width: calc(50% - 1em);
+}
+
+header > #userSettings > a:hover,
+header > #userSettings > .dropdown:hover {
+	background-color: #ddd;
+}
+
+header > #userSettings > a > img,
+header > #userSettings > .dropdown > a > img {
+	opacity: 0.75;
+}
+
+main {
+	height: calc(100% - 2em);
+	width: 100%;
+}
+
+
+@media (max-width: 625px) {
+	nav {
+		font-size: 0.7em;
+	}
+}
+
+@media (max-width: 475px) {
+	main > .contactDivToggled {
+		width: 100%!important;
+	}
+
+	main > .contentDivUnToggled {
+		display: none;
+	}
+}
+
+.playercontainer{
+	background-color: #ddd;
+}
+
+.playground{
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("/images/trottelmuetze.png");
+  width: 100%;
+  height: auto;
+}
+
+.taskpopup {
+	display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 30%;
+  left: 0;
+  top: 0;
+  width: 80%;
+  height: 80%;
+  overflow: auto;
+}
+
+.taskpopupToogle{
+		display: contents;
+}
+
+.task-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.finish {
+	background-color: green;
+	  color: white;
+	  float: right;
+	  font-size: 28px;
+	  font-weight: bold;
+	  padding: 10px;
+}
+
+.spacer{
+	width: 100%;
+	border-bottom: 1px solid black;
+}
+
+.dice {
+
+}
+
+.playercards{
+	border: 1px solid black;
+  text-decoration: none;
+}
+.playercards:hover{
+	background-color: gray;
+}
+
+.cardheader{
+	font-size: 120%;
+  text-align: center;
+}
+.carddescr{
+	font-size: 90%;
+}
+.carddescrlong{
+	font-size: 60%;
+}

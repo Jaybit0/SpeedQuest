@@ -1,0 +1,91 @@
+html{
+	background: url("../images/loginbg-blur.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	font-family: "Verdana";
+}
+
+* {
+	overflow: hidden;
+	box-sizing: border-box;
+}
+
+.tab {
+	border: 1px solid #ccc;
+	background-color: #f1f1f1;
+}
+
+.tab > button {
+	background-color: inherit;
+	float: left;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 14px 16px;
+	transition: 0.3s;
+}
+
+.tab > button:hover {
+	background-color: #ddd;
+}
+
+.tab > button.active {
+	background-color: #ccc;
+}
+
+.tabcontent {
+	padding: 6px 12px;
+	border-top: none;
+}
+
+.container {
+	background-color: rgb(255,255,255);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1;
+	width: 20%;
+	height: 35%;
+	box-shadow: 0px 0px 10px black;
+	min-width: 300px;
+	min-height: 325px;
+}
+
+.tabcontent > form{
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+.tabcontent > form > input[type=text], .tabcontent > form > input[type=password] {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+}
+
+.tabcontent > form > Button {
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	margin-top: 20px;
+	border: none;
+	cursor: pointer;
+	width: 30%;
+	min-width: 90px;
+	float: right;
+}
+
+.tabcontent > form > Button:hover {
+	opacity: 0.8;
+}
