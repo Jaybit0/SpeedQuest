@@ -6,7 +6,7 @@ stages:
 
 cache:
   paths:
-    - node_modules/
+    - server/node_modules/
 
 install_dependencies:
   stage: build
@@ -14,6 +14,8 @@ install_dependencies:
     - cd server
   script:
     - npm install
+  after_script:
+    - ls 
 
 foreverdeploy:
   stage: deploy
