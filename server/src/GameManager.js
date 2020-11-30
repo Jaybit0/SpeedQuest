@@ -4,7 +4,6 @@ const Game = require('./Logic/Game.js');
 module.exports = class GameManager{
   constructor(){
     this.game = null;
-
     this.games = new Map();
   }
 
