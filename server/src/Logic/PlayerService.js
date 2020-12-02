@@ -69,4 +69,25 @@ module.exports = class PlayerService extends EventEmitter{
 			return;
 		player.score = player.score + addScore;
 	}
+
+	countOnlinePlayers(){
+		return this.getOnlinePlayers().length;
+	}
+
+	getOnlinePlayers(){
+		return this.players.filter(x => x.state > 0);
+	}
+
+	addScores(scores){
+		var updatePlayers = scores.map(item => {
+			var player = item.player;
+			player.score+= item.score;
+			return player;
+		});
+		return updatePlayers;
+	}
+
+	resetScores(){
+		this.players.forEach(player => player.score = 0);
+	}
 }

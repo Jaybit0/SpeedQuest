@@ -1,0 +1,28 @@
+{
+  "tasks": [
+    {
+      "name": "fastclick",
+      "rating": "all",
+      "sets": [
+        {
+          "clickcount": 10
+        },
+        {
+          "clickcount": 5
+        },
+        {
+          "clickcount": 15
+        }
+      ]
+    },
+    {
+      "name": "other",
+      "rating": "steps",
+      "sets": [
+        {
+          "othercount": 17
+        }
+      ]
+    }
+  ]
+}

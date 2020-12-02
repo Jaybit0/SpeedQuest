@@ -31,8 +31,8 @@ module.exports = class PlayerAdapter{
 
 	updatePlayers(players, updatetyp){
 		var returnMessage = new Object({
-		packet: "playerupdate",
-		updateplayers: players
+			packet: "playerupdate",
+			updateplayers: players
 		});
 		this.ss.sendMessage(returnMessage, null);
 	}
