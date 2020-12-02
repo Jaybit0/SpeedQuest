@@ -52,8 +52,12 @@ module.exports = class PlayerService extends EventEmitter{
 			throw "Invalid player";
 
 		this.players[index].state = state;
-		this.emit("updatePlayer", this.players[index]);
+		if(state == 0 && this.countOnlinePlayers() == 0){
+			this.endGame();
+			return;
+		}
 
+		this.emit("updatePlayer", this.players[index]);
 		if(state == 1)
 			this.emit("updatePlayerConn", this.players[index]);
 	}
@@ -61,13 +65,6 @@ module.exports = class PlayerService extends EventEmitter{
 	findPlayerByName(playername){
 		var index = this.players.findIndex(x => x.name === playername);
 		return this.players[index];
-	}
-
-	updateScore(player, addScore){
-		const index = this.players.findIndex(x => x.name === player.name);
-		if(index == -1)
-			return;
-		player.score = player.score + addScore;
 	}
 
 	countOnlinePlayers(){
@@ -89,5 +86,9 @@ module.exports = class PlayerService extends EventEmitter{
 
 	resetScores(){
 		this.players.forEach(player => player.score = 0);
+	}
+
+	endGame(){
+		this.emit("resetGame");
 	}
 }
