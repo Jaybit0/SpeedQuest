@@ -1,10 +1,9 @@
+const fs = require('fs');
 
 module.exports = class GameUtil{
-  static isDouble(dice){
-    return (dice.first === dice.second);
-  }
-
-  static getNewPos(dice, player){
-    return (player.position + dice.first + dice.second) % 40;
-  }
+    static readGames(){
+        let rawdata = fs.readFileSync('./config/games.json');
+        let tasks = JSON.parse(rawdata).tasks;
+        return tasks;
+    }
 }

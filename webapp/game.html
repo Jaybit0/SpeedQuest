@@ -28,14 +28,17 @@
 				<div class="row">
 					<div class="col-lg-3">
 						<h2 class="spacer">Aktionen 3</h2>
-						<div id="nextcontroll">
-							<button onclick="">Fertig</button>
+						<div id="startgame">
+							<button onclick="startGame()">Starten</button>
 						</div>
 
 
 					</div>
 					<div class="col-lg-6">
-												
+						<p id="stateview"></p>
+						<p id="roundview"></p>
+						<p id="gamename"></p>
+						<button id="playBtn" onclick="play(10)">Spielen</button>
 					</div>
 					<div class="col-lg-3 playercontainer">
 						<h2>Spieler</h2>
@@ -65,6 +68,7 @@
 		<img class="trottelmuetze-status" />
 		<img alt="." class="online-status" />
 		<a href="#" class="username">Jonas</a>
+		<a class="score">- P</a>
 	</div>
 
 </template>

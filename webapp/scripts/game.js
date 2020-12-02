@@ -16,6 +16,7 @@ var playerList = new ListManager('#playerlist', '#playerListItemTemplate', (func
         './images/online_3.png');
   $(viewItem).find('img[class="currplayer-status"]').attr('src', contact.isCurrPlayer ? './images/currPlayer.png' : '');
   $(viewItem).find('img[class="trottelmuetze-status"]').attr('src', contact.isTrottelmuetze ? './images/trottelmuetze_icon.png' : '');
+	$(viewItem).find('a[class="score"]').text(contact.score);
 
 }), function (contact) {return contact.name});
 
@@ -33,10 +34,44 @@ socket.onmessage = function (msg) {
 		user = data.userself;
 		showInviteLink(data.gamekey);
 		editPlayerList(data.playerlist);
+    toggleMoveState("WAITING", 0);
 	}
-	if (data.packet == "playerupdate") {
+	else if (data.packet == "playerupdate") {
 		editPlayerList(data.updateplayers);
 	}
+	else if (data.packet == "gamestate") {
+    toggleMoveState(data.gamestate, data.round);
+		editPlayerList(data.updateplayers);
+	}
+	else if (data.packet == "taskassign") {
+    $('#gamename').text(data.task.name  + "    " + msg.data);
+	}
+}
+
+function toggleMoveState(state, round){
+  $('#stateview').text(state);
+  if(state == "WAITING"){
+    if(user.isHost)
+      $('#startgame').show();
+    else
+      $('#startgame').hide();
+
+    $('#playBtn').hide();
+    $('#roundview').hide();
+    $('#gamename').hide();
+  }else if(state == "INGAME"){
+    $('#gamename').show();
+    $('#playBtn').show();
+    $('#roundview').text("Round " + round.toString());
+    if(user.isHost)
+      $('#startgame').hide();
+  }else if(state == "FINISHED"){
+    $('#roundview').hide();
+    $('#gamename').hide();
+    $('#playBtn').hide();
+    if(user.isHost)
+      $('#startgame').show();
+  }
 }
 
 function getGameLink(){
@@ -48,6 +83,25 @@ function showInviteLink(key){
   if (window.history.replaceState) {
      window.history.replaceState(null, "Trottelmuetze", getGameLink());
   }
+}
+
+function startGame(){
+  var message = {
+    packet: "startgame",
+    settings: {
+      roundcount: 5
+    }
+  };
+  socket.send(JSON.stringify(message));
+}
+
+function play(score){
+  var message = {
+    packet: "taskinfo",
+    taskdone: true,
+    rating: score
+  };
+  socket.send(JSON.stringify(message));
 }
 
 function endgame(){
