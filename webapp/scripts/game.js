@@ -1,6 +1,6 @@
 
 socket = (window.location.protocol == "http:") ?
- new WebSocket("ws://" + window.location.hostname + ":3030?token=" + getUrlParam(window.location.href).token) :
+ new WebSocket("ws://" + window.location.hostname + ":4430?token=" + getUrlParam(window.location.href).token) :
  new WebSocket("wss://" + window.location.host + "?token=" + getUrlParam(window.location.href).token);
 
 var contacts = [];
