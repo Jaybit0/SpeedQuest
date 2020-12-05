@@ -19,4 +19,4 @@ foreverdeploy:
   stage: deploy
   before_script:
     - forever stop server/server.js || true
-  script: forever start server/server.js -k ~/server.key -c ~/server.crt
+  script: forever start server/server.js #-k ~/server.key -c ~/server.crt
