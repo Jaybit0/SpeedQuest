@@ -15,11 +15,12 @@ const app = express();
 var wss;
 
 const args = require('minimist')(process.argv.slice(2));
-if("k" in args && "c" in args){
+if("k" in args && "c" in args && "b" in args){
 	sslconf.SSLConfig.useSSL = true;
 	sslconf.SSLConfig.sslOptions = {
 		key: fs.readFileSync(args.k),
-		cert: fs.readFileSync(args.c)
+		cert: fs.readFileSync(args.c),
+		ca: fs.readFileSync(args.b)
 	};
 }
 
