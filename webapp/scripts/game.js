@@ -42,7 +42,7 @@ socket.onmessage = function (msg) {
 	else if (data.packet == "gamestate") {
     toggleMoveState(data.gamestate);
 	}
-	else if (data.packet == "taskfinished") {
+	else if (data.packet == "taskfinish") {
 		editPlayerList(data.roundscores);
     $('#gamename').text("Next task in 3s");
 	}
