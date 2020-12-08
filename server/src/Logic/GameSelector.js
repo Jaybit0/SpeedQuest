@@ -31,6 +31,7 @@ module.exports = class GameSelector{
 
     var task = this.selectRandomTask(tasksets);
     var taskset = this.selectRandomSet(tasksets, task)
+    var taskset = this.makeAdditionalSettings(taskset, task);
 
     this.genTasks.push(new Object({name: task.name, rating: task.rating, parameters: taskset}));
     if(this.genTasks.length >= this.roundCount)
@@ -58,5 +59,23 @@ module.exports = class GameSelector{
     var setIndex = Math.floor(Math.random() * task.sets.length);
     var taskset = tasksets[task.index].sets.splice(setIndex, 1)[0];
     return taskset;
+  }
+
+  makeAdditionalSettings(taskset, task){
+    if("setsAdditional" in task){
+      task.setsAdditional.forEach(item => {
+        var val = null;
+        if(item.type == "random")
+          val = Math.random() * (item.to - item.from);
+
+        if("numberType" in item && item.numberType == "int")
+          val = Math.floor(val);
+
+        taskset[item.field] = val;
+
+      });
+      return taskset;
+    }else
+      return taskset;
   }
 }

@@ -3,6 +3,7 @@
     {
       "name": "fastclick",
       "rating": "all",
+
       "sets": [
         {
           "clickcount": 10
@@ -21,6 +22,15 @@
       "sets": [
         {
           "othercount": 17
+        }
+      ],
+      "setsAdditional": [
+        {
+          "field": "clickcount",
+          "type": "random",
+          "from": 0,
+          "to": 20,
+          "numberType": "int"
         }
       ]
     }
