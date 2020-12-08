@@ -36,7 +36,7 @@ if(sslconf.SSLConfig.useSSL){
 
 	wss = new WebSocket.Server({ server: httpsServer });
 }else{
-	const port = 8080;
+	const port = 80;
 	app.listen(port, () => {
 		console.log(`HTTP Webserver started on Port ${port}`);
 	});
