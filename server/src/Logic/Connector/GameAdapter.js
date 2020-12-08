@@ -8,8 +8,9 @@ module.exports = class GameAdapter{
 
 		ss.on("receiveMessage", this.receiveMessage.bind(this));
 
-		gl.on("updateIngame", this.updateIngame.bind(this));
+		gl.on("updateScores", this.updateScores.bind(this));
 		gl.on("finishGame", this.finishGame.bind(this));
+		gl.on("startGame", this.startedGame.bind(this));
 	}
 
 	receiveMessage(message, playername){
@@ -23,21 +24,26 @@ module.exports = class GameAdapter{
 			this.gl.startGame(parameters);
 	}
 
-	updateIngame(roundNumber, scores){
-		this.sendUpdate("INGAME", roundNumber, scores);
+	updateScores(scores){
+		var returnMessage = new Object({
+			packet: "taskfinish",
+			roundscores: scores
+		});
+		this.ss.sendMessage(returnMessage, null);
 	}
 
-	finishGame(roundNumber, scores){
-		this.sendUpdate("FINISHED", roundNumber, scores);
+	startedGame(){
+		this.sendStateUpdate("INGAME");
 	}
 
-	sendUpdate(gamestate, roundNumber, scores){
-		console.log(scores);
+	finishGame(){
+		this.sendStateUpdate("FINISHED");
+	}
+
+	sendStateUpdate(gamestate){
 		var returnMessage = new Object({
 			packet: "gamestate",
-			gamestate: gamestate,
-			round: roundNumber,
-			updateplayers: scores
+			gamestate: gamestate
 		});
 		this.ss.sendMessage(returnMessage, null);
 	}

@@ -40,15 +40,23 @@ socket.onmessage = function (msg) {
 		editPlayerList(data.updateplayers);
 	}
 	else if (data.packet == "gamestate") {
-    toggleMoveState(data.gamestate, data.round);
-		editPlayerList(data.updateplayers);
+    toggleMoveState(data.gamestate);
+	}
+	else if (data.packet == "taskfinished") {
+		editPlayerList(data.roundscores);
+    $('#gamename').text("Next task in 3s");
 	}
 	else if (data.packet == "taskassign") {
     $('#gamename').text(data.task.name  + "    " + msg.data);
+    roundUpdate(data.round);
 	}
 }
 
-function toggleMoveState(state, round){
+function roundUpdate(round){
+  $('#roundview').text("Round " + round.toString());
+}
+
+function toggleMoveState(state){
   $('#stateview').text(state);
   if(state == "WAITING"){
     if(user.isHost)
@@ -62,7 +70,7 @@ function toggleMoveState(state, round){
   }else if(state == "INGAME"){
     $('#gamename').show();
     $('#playBtn').show();
-    $('#roundview').text("Round " + round.toString());
+    $('#roundview').show();
     if(user.isHost)
       $('#startgame').hide();
   }else if(state == "FINISHED"){

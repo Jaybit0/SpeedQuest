@@ -11,9 +11,9 @@ module.exports = class RoundManager extends EventEmitter{
     return this.timer == null;
   }
 
-  newRound(expectPlayerCount, task){
+  newRound(expectPlayerCount, task, round){
     //Emit all task
-    this.emit("newTask", task);
+    this.emit("newTask", task, round);
     this.expectPlayerCount = expectPlayerCount;
     this.playersScore = [];
     this.task = task;

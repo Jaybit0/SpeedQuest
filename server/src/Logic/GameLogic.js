@@ -19,25 +19,26 @@ module.exports = class GameLogic extends EventEmitter{
     this.roundCount = parameters.roundcount;
     this.gameTasks = this.gs.generateTasks(this.roundCount);
     this.currentRound = 0;
-    this.nextRound(this.ps.getOnlinePlayers());
+    this.emit("startGame");
+    this.nextRound();
   }
 
-  nextRound(scores){
+  nextRound(){
     if(this.roundCount <= this.currentRound){
-      this.emit("finishGame", this.currentRound, scores);
+      this.emit("finishGame");
       this.ps.resetScores();
       return;
     }
     var task = this.gameTasks[this.currentRound];
     this.currentRound++;
-    this.emit("updateIngame", this.currentRound, scores);
 
-    setTimeout(() => {this.rm.newRound(this.ps.countOnlinePlayers(), task)}, 3000);
+    setTimeout(() => {this.rm.newRound(this.ps.countOnlinePlayers(), task, this.currentRound)}, 3000);
   }
 
   finishRound(scores){
     var updatedPlayers = this.ps.addScores(scores);
-    this.nextRound(updatedPlayers);
+    this.emit("updateScores", updatedPlayers);
+    this.nextRound();
   }
 
 }

@@ -35,9 +35,10 @@ module.exports = class RoundAdapter{
 		this.rm.playerFinish(player, score);
 	}
 
-	newTask(task){
+	newTask(task, round){
 		var returnMessage = new Object({
 		packet: "taskassign",
+		round: round,
 		task: task
 		});
 		this.ss.sendMessage(returnMessage, null);
