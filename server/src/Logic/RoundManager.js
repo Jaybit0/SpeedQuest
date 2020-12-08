@@ -18,7 +18,7 @@ module.exports = class RoundManager extends EventEmitter{
     this.playersScore = [];
     this.task = task;
 
-    this.timer = setTimeout(() => {this.finish()}, 10000);
+    this.timer = setTimeout(() => {this.finish()}, task.maxTime);
   }
 
   finish(){
