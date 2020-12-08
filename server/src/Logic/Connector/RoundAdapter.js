@@ -16,6 +16,18 @@ module.exports = class RoundAdapter{
 			if(message.taskdone)
 				this.playerFinish(playername, message.rating);
 		}
+		if(message.packet == "forward" && "payload" in message){
+				this.sendForward(playername, message.payload);
+		}
+	}
+
+	sendForward(payload, playername){
+		var returnMessage = new Object({
+		packet: "forward",
+		sender: playername,
+		payload: payload
+		});
+		this.ss.sendMessage(returnMessage, null);
 	}
 
 	playerFinish(playername, score){
