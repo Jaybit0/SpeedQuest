@@ -18,7 +18,8 @@ module.exports = class RoundManager extends EventEmitter{
     this.playersScore = [];
     this.task = task;
 
-    this.timer = setTimeout(() => {this.finish()}, task.maxTime);
+    console.log(task);
+    this.timer = setTimeout(() => {this.finish()}, task.maxtime * 1000);
   }
 
   finish(){
@@ -50,7 +51,7 @@ module.exports = class RoundManager extends EventEmitter{
     if(this.timer == null)
       return;
     this.playersScore.push(new Object({player: player, score: score}));
-    if(this.expectPlayerCount() <= this.playersScore.length)
+    if(this.expectPlayerCount <= this.playersScore.length)
       this.finish();
   }
 }

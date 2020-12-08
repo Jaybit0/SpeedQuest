@@ -31,7 +31,8 @@ module.exports = class GameLogic extends EventEmitter{
     var task = this.gameTasks[this.currentRound];
     this.currentRound++;
     this.emit("updateIngame", this.currentRound, scores);
-    this.rm.newRound(() => {return this.ps.countOnlinePlayers()}, task);
+
+    setTimeout(() => {this.rm.newRound(this.ps.countOnlinePlayers(), task)}, 3000);
   }
 
   finishRound(scores){

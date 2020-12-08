@@ -3,7 +3,7 @@
     {
       "name": "fastclick",
       "rating": "all",
-      "maxTime": 15,
+      "maxtime": 15,
       "sets": [
         {
           "clickcount": 10
@@ -19,7 +19,7 @@
     {
       "name": "other",
       "rating": "steps",
-      "maxTime": 5,
+      "maxtime": 5,
       "sets": [
         {
           "othercount": 17
