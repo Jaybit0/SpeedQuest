@@ -65,6 +65,7 @@
 	  "setsAdditional": [
 	    {
 		  "field": "seed",
+      "type": "random",
 		  "from": 0,
 		  "to": 2147483647,
 		  "numberType": "int"
