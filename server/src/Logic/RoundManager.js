@@ -33,7 +33,8 @@ module.exports = class RoundManager extends EventEmitter{
   buildScore(){
     if(this.task.rating == "step"){
       this.playersScore.forEach((item, index) => {
-        var percent = 100 - (index * 20);
+
+        var percent = 1 - (index * 0.2);
         if(percent > 0)
           item.score = item.score * percent;
         else
@@ -50,10 +51,14 @@ module.exports = class RoundManager extends EventEmitter{
   playerFinish(player, score){
     if(this.timer == null)
       return;
-    if(this.playersScore.findIndex(item => item.player.name == player.name) != -1)
-      return;
-    this.playersScore.push(new Object({player: player, score: score}));
-    if(this.expectPlayerCount <= this.playersScore.length)
+    var scoreObj = new Object({player: player, score: score});
+    var index = this.playersScore.findIndex(item => item.player.name == player.name);
+    if(index != -1)
+      this.playersScore[index] = scoreObj;
+    else
+      this.playersScore.push(scoreObj);
+
+    if(this.task.endonlyontimeout != "true" && this.expectPlayerCount <= this.playersScore.length)
       this.finish();
   }
 }

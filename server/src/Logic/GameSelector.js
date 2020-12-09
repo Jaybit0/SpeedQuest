@@ -33,7 +33,13 @@ module.exports = class GameSelector{
     var taskset = this.selectRandomSet(tasksets, task)
     var taskset = this.makeAdditionalSettings(taskset, task);
 
-    this.genTasks.push(new Object({name: task.name, rating: task.rating, maxtime: task.maxtime, parameters: taskset}));
+    this.genTasks.push(new Object({
+      name: task.name,
+      rating: task.rating,
+      maxtime: task.maxtime,
+      endonlyontimeout: task.endonlyontimeout,
+      parameters: taskset
+    }));
     if(this.genTasks.length >= this.roundCount)
       return;
 
