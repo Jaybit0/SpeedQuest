@@ -18,10 +18,8 @@ install_dependencies:
     
 nodetest:
   stage: test
-  before_script:
-    - cd server
   script:
-    - npm test
+    - node server/test.js
 
 foreverdeploy:
   stage: deploy
