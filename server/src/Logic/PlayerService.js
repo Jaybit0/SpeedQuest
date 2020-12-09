@@ -43,7 +43,10 @@ module.exports = class PlayerService extends EventEmitter{
 	pickColor(){
 		let rawdata = fs.readFileSync('./config/colors.json');
 		let colors = JSON.parse(rawdata).colors;
-		return colors[this.players.length];
+		if(this.players.length < colors.length)
+			return colors[this.players.length];
+		else
+			return colors[0];
 	}
 
 	updatePlayerState(player, state){
