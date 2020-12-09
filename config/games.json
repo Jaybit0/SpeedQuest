@@ -17,23 +17,23 @@
       ]
     },
     {
-      "name": "other",
-      "rating": "steps",
-      "maxtime": 5,
+      "name": "whacmole",
+      "rating": "all",
+      "maxtime": 10,
       "endonlyontimeout": true,
       "sets": [
         {
-          "othercount": 17
+
         }
       ],
       "setsAdditional": [
-        {
-          "field": "clickcount",
+  	    {
+    		  "field": "seed",
           "type": "random",
-          "from": 0,
-          "to": 20,
-          "numberType": "int"
-        }
+    		  "from": 0,
+    		  "to": 2147483647,
+    		  "numberType": "int"
+    		}
       ]
     },
 	{
