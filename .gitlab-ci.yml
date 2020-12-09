@@ -2,6 +2,7 @@ image: node:latest
 
 stages:
   - build
+  - test
   - deploy
 
 cache:
@@ -14,6 +15,13 @@ install_dependencies:
     - cd server
   script:
     - npm install
+    
+nodetest:
+  stage: test
+  before_script:
+    - cd server
+  script:
+    - npm test
 
 foreverdeploy:
   stage: deploy
