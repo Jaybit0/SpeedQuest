@@ -58,7 +58,7 @@ module.exports = class RoundManager extends EventEmitter{
     else
       this.playersScore.push(scoreObj);
 
-    if(this.task.endonlyontimeout != "true" && this.expectPlayerCount <= this.playersScore.length)
+    if(this.task.endonlyontimeout != true && this.expectPlayerCount <= this.playersScore.length)
       this.finish();
   }
 }

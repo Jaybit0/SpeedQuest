@@ -20,7 +20,7 @@
       "name": "other",
       "rating": "steps",
       "maxtime": 5,
-      "endonlyontimeout": "true",
+      "endonlyontimeout": true,
       "sets": [
         {
           "othercount": 17
