@@ -71,6 +71,43 @@
 		  "numberType": "int"
 		}
 	  ]
+	},
+	{
+	  "name": "tapcolornottext",
+	  "rating": "steps",
+	  "maxtime": 30,
+	  "sets": [
+	    {
+		  "color": "red"
+		},
+		{
+		  "color": "orange"
+		},
+		{
+		  "color": "yellow"
+		},
+		{
+		  "color": "green"
+		},
+		{
+		  "color": "cyan"
+		},
+		{
+		  "color": "blue"
+		},
+		{
+		  "color": "magenta"
+		}
+	  ],
+	  "setsAdditional": [
+	    {
+		  "field": "seed",
+      "type": "random",
+		  "from": 0,
+		  "to": 2147483647,
+		  "numberType": "int"
+		}
+	  ]
 	}
   ]
 }
