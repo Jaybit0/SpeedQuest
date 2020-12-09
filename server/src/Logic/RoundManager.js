@@ -50,6 +50,8 @@ module.exports = class RoundManager extends EventEmitter{
   playerFinish(player, score){
     if(this.timer == null)
       return;
+    if(this.playersScore.findIndex(item => item.player.name == player.name) != -1)
+      return;
     this.playersScore.push(new Object({player: player, score: score}));
     if(this.expectPlayerCount <= this.playersScore.length)
       this.finish();
