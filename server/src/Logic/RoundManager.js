@@ -31,7 +31,7 @@ module.exports = class RoundManager extends EventEmitter{
   }
 
   buildScore(){
-    if(this.task.rating == "step"){
+    if(this.task.rating == "steps"){
       this.playersScore.forEach((item, index) => {
 
         var percent = 1 - (index * 0.2);
