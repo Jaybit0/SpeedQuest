@@ -81,7 +81,7 @@
   		}
   	  ]
   	},
-  	{
+	{
   	  "name": "tapcolornottext",
   	  "rating": "steps",
   	  "maxtime": 30,
@@ -111,7 +111,7 @@
   	  "setsAdditional": [
   	    {
   		  "field": "seed",
-        "type": "random",
+          "type": "random",
   		  "from": 0,
   		  "to": 2147483647,
   		  "numberType": "int"
@@ -132,6 +132,21 @@
           "correct": 4
         }
       ]
-  	}
+  	},
+	{
+	  "name": "disarmbomb",
+	  "rating": "all",
+	  "maxtime": 40,
+	  "sets": [],
+	  "setsAdditional": [
+	    {
+		  "field": "seconds",
+		  "type": "random",
+		  "from": 15,
+		  "to": 35,
+		  "numberType": "int"
+		}
+	  ]
+	}
   ]
 }
