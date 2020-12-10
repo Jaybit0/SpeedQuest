@@ -26,6 +26,28 @@
 
         }
       ],
+	  
+      "setsAdditional": [
+  	    {
+    		  "field": "seed",
+          "type": "random",
+    		  "from": 0,
+    		  "to": 2147483647,
+    		  "numberType": "int"
+    		}
+      ]
+    },
+	 {
+      "name": "opensafe",
+      "rating": "steps",
+      "maxtime": 20,
+      "endonlyontimeout": true,
+      "sets": [
+        {
+
+        }
+      ],
+	  
       "setsAdditional": [
   	    {
     		  "field": "seed",
@@ -118,6 +140,26 @@
   		}
   	  ]
   	},
+	{
+      "name": "opensafe",
+      "rating": "steps",
+      "maxtime": 20,
+      "endonlyontimeout": true,
+      "sets": [
+        {
+
+        }
+      ],
+      "setsAdditional": [
+  	    {
+    		  "field": "seed",
+          "type": "random",
+    		  "from": 0,
+    		  "to": 2147483647,
+    		  "numberType": "int"
+    		}
+      ]
+    },
     {
   	  "name": "question",
   	  "rating": "steps",
