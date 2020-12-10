@@ -88,7 +88,15 @@ module.exports = class PlayerService extends EventEmitter{
 	}
 
 	resetScores(){
-		this.players.forEach(player => player.score = 0);
+		var updatePlayers = this.players.filter(player => {
+			var needUpdate = player.score != 0;
+			if(needUpdate)
+				player.score = 0;
+
+			return needUpdate;
+		});
+		if(updatePlayers.length > 0)
+			this.emit("updatePlayers", updatePlayers);
 	}
 
 	endGame(){

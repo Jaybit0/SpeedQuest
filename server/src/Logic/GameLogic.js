@@ -19,6 +19,7 @@ module.exports = class GameLogic extends EventEmitter{
     this.roundCount = parameters.roundcount;
     this.gameTasks = this.gs.generateTasks(this.roundCount);
     this.currentRound = 0;
+    this.ps.resetScores();
     this.emit("startGame");
     this.nextRound();
   }
@@ -26,7 +27,6 @@ module.exports = class GameLogic extends EventEmitter{
   nextRound(){
     if(this.roundCount <= this.currentRound){
       this.emit("finishGame");
-      this.ps.resetScores();
       return;
     }
     var task = this.gameTasks[this.currentRound];

@@ -19,7 +19,7 @@
     {
       "name": "whacmole",
       "rating": "all",
-      "maxtime": 10,
+      "maxtime": 15,
       "endonlyontimeout": true,
       "sets": [
         {
