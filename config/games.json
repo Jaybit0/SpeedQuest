@@ -137,7 +137,10 @@
 	  "name": "disarmbomb",
 	  "rating": "all",
 	  "maxtime": 40,
-	  "sets": [],
+	  "sets": [
+	    {
+		}
+	  ],
 	  "setsAdditional": [
 	    {
 		  "field": "seconds",
