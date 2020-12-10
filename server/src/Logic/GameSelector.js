@@ -72,7 +72,7 @@ module.exports = class GameSelector{
       task.setsAdditional.forEach(item => {
         var val = null;
         if(item.type == "random")
-          val = Math.random() * (item.to - item.from);
+          val = (Math.random() * (item.to - item.from)) + item.from;
 
         if("numberType" in item && item.numberType == "int")
           val = Math.floor(val);
