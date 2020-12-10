@@ -36,6 +36,26 @@
     		}
       ]
     },
+	 {
+      "name": "collectitems",
+      "rating": "all",
+      "maxtime": 20,
+      "endonlyontimeout": true,
+      "sets": [
+        {
+
+        }
+      ],
+      "setsAdditional": [
+  	    {
+    		  "field": "seed",
+          "type": "random",
+    		  "from": 0,
+    		  "to": 2147483647,
+    		  "numberType": "int"
+    		}
+      ]
+    },
   	{
   	  "name": "colortap",
   	  "rating": "steps",
@@ -49,18 +69,6 @@
   		},
   		{
   		  "color": "yellow"
-  		},
-  		{
-  		  "color": "green"
-  		},
-  		{
-  		  "color": "cyan"
-  		},
-  		{
-  		  "color": "blue"
-  		},
-  		{
-  		  "color": "magenta"
   		}
   	  ],
   	  "setsAdditional": [
