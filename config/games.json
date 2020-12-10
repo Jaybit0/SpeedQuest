@@ -36,79 +36,94 @@
     		}
       ]
     },
-	{
-	  "name": "colortap",
-	  "rating": "steps",
-	  "maxtime": 20,
-	  "sets": [
-	    {
-		  "color": "red"
-		},
-		{
-		  "color": "orange"
-		},
-		{
-		  "color": "yellow"
-		},
-		{
-		  "color": "green"
-		},
-		{
-		  "color": "cyan"
-		},
-		{
-		  "color": "blue"
-		},
-		{
-		  "color": "magenta"
-		}
-	  ],
-	  "setsAdditional": [
-	    {
-		  "field": "seed",
-      "type": "random",
-		  "from": 0,
-		  "to": 2147483647,
-		  "numberType": "int"
-		}
-	  ]
-	},
-	{
-	  "name": "tapcolornottext",
-	  "rating": "steps",
-	  "maxtime": 30,
-	  "sets": [
-	    {
-		  "color": "red"
-		},
-		{
-		  "color": "orange"
-		},
-		{
-		  "color": "yellow"
-		},
-		{
-		  "color": "green"
-		},
-		{
-		  "color": "cyan"
-		},
-		{
-		  "color": "blue"
-		},
-		{
-		  "color": "magenta"
-		}
-	  ],
-	  "setsAdditional": [
-	    {
-		  "field": "seed",
-      "type": "random",
-		  "from": 0,
-		  "to": 2147483647,
-		  "numberType": "int"
-		}
-	  ]
-	}
+  	{
+  	  "name": "colortap",
+  	  "rating": "steps",
+  	  "maxtime": 20,
+  	  "sets": [
+  	    {
+  		  "color": "red"
+  		},
+  		{
+  		  "color": "orange"
+  		},
+  		{
+  		  "color": "yellow"
+  		},
+  		{
+  		  "color": "green"
+  		},
+  		{
+  		  "color": "cyan"
+  		},
+  		{
+  		  "color": "blue"
+  		},
+  		{
+  		  "color": "magenta"
+  		}
+  	  ],
+  	  "setsAdditional": [
+  	    {
+  		  "field": "seed",
+        "type": "random",
+  		  "from": 0,
+  		  "to": 2147483647,
+  		  "numberType": "int"
+  		}
+  	  ]
+  	},
+  	{
+  	  "name": "tapcolornottext",
+  	  "rating": "steps",
+  	  "maxtime": 30,
+  	  "sets": [
+  	    {
+  		  "color": "red"
+  		},
+  		{
+  		  "color": "orange"
+  		},
+  		{
+  		  "color": "yellow"
+  		},
+  		{
+  		  "color": "green"
+  		},
+  		{
+  		  "color": "cyan"
+  		},
+  		{
+  		  "color": "blue"
+  		},
+  		{
+  		  "color": "magenta"
+  		}
+  	  ],
+  	  "setsAdditional": [
+  	    {
+  		  "field": "seed",
+        "type": "random",
+  		  "from": 0,
+  		  "to": 2147483647,
+  		  "numberType": "int"
+  		}
+  	  ]
+  	},
+    {
+  	  "name": "question",
+  	  "rating": "steps",
+  	  "maxtime": 10,
+      "sets": [
+        {
+          "question": "Was ist 4*12?",
+          "answer1": "26",
+          "answer2": "46",
+          "answer3": "62",
+          "answer4": "48",
+          "correct": 4
+        }
+      ]
+  	}
   ]
 }
