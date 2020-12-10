@@ -135,7 +135,7 @@
   	},
 	{
 	  "name": "disarmbomb",
-	  "rating": "all",
+	  "rating": "steps",
 	  "maxtime": 40,
 	  "sets": [
 	    {
