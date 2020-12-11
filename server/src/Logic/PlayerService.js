@@ -5,12 +5,11 @@ const fs = require('fs');
 module.exports = class PlayerService extends EventEmitter{
 	constructor() {
 		super();
+		this.MAXLENGTH = 15;
 		this.players = [];
 	}
 
 	loadPlayer(newname){
-    if(newname == null || newname.length == 0)
-      newname = "Hund";
     var result = this.validateName(newname);
 
     if(result.index == -1)
@@ -20,6 +19,12 @@ module.exports = class PlayerService extends EventEmitter{
 	}
 
   validateName(newname){
+    if(newname == null || newname.length == 0)
+      newname = "Hund";
+
+		if(newname.length > this.MAXLENGTH)
+			newname = newname.substr(0, this.MAXLENGTH);
+
     var index = this.players.findIndex(x => x.name === newname);
     if(index != -1 && this.players[index].state > 0){
       newname = newname + "2";
