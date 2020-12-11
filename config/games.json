@@ -25,7 +25,7 @@
 
         }
       ],
-	  
+
       "setsAdditional": [
   	    {
     		  "field": "seed",
@@ -45,7 +45,7 @@
 
         }
       ],
-	  
+
       "setsAdditional": [
   	    {
     		  "field": "seed",
@@ -170,6 +170,20 @@
 		  "numberType": "int"
 		}
 	  ]
-	}
+	},
+  {
+    "name": "findword",
+    "rating": "steps",
+    "maxtime": 15,
+    "sets": [
+      {
+        "word": "Bankett",
+        "intext": 1,
+        "text1": "Eure allgötliche Magnifizienz, Arndus Kortwigson,
+anlässlich der Dekade dreie, die Ihr nun wandelt unter der Sonne eures Reiches, möchte wir, eure ergebenen Untertanen und Hofstäbe, euch, Primus Sociologikus Pädagogikus folgende Bekanntmachung kundtun. Wie uns, euren  loyalen und untertänigen Dienern bekannt wurde, so gedenken Sie, eure erleuchtete Durchlauchtheit,  Ihre Residenz, zu verlegen, vergrößern und ihr ein noch denkwürdigeres und wohlhabenderes Antlitz zu verleihen. Ihre unvergessliche Allmächtigkeit plane nun ins Reich des Landes der Berge zu ziehen und dort weise, gerecht, gutmütig, friedvoll, und vorausschauend das Land und seine Bewohner zu regieren. Aus diesem Grunde, und weil wir, ihre zutiefst untertänigen Untertanen, Sie, künftiger Patriarch der Rodung vor dem Walde so unvorstellbar, schätzen und lieben, wird es eine Feierlichkeit, ein Zusammentreffen von Leuten, ein Bankett der Edlen, ein Reigen aus Musik und Bratenfett, ja, eine Fest dessen Ausmaße Sie, verehrte Monarch von Münster, noch nicht erlebt haben, geben. Wir, die kleinen speichelleckenden Anhängsel, haben uns erlaubt dieses zu organisieren und Sie, großer Seeherr und Partizier von Lübeck, dürfen sich an kulinarische Genüsse freuen, die Ihren Gaumen schmeicheln, ihn umspielen und eine Wohltat für die Seele darstellen werden (alles selbstgemacht *gg*). Und damit es, Ihnen, mein Herr an der Freude nicht fehlt, wird es eine Tjoste, ein mittelalterliches Turnier und Kräftemessen der Rittersleut geben. Dazu werden Gaukler und Spielleute aus dem ganze Lande erscheinen, die Ihre, oh unbeschreiblicher Inhalator von Holland, Ohren verzaubern werden. ",
+        "text2": "Höhere Fehlerraten durch Interferenzen:-Störungen von z.B. Elektromotoren, Blitzschlag, etc.Restriktive Regulierungen der Frequenzbereiche: -Frequenzen müssen koordiniert werden -die sinnvoll nutzbaren Frequenzen sind schon fast alle vergeben Niedrige Übertragungsraten: -lokal einige Mbit/s, regional derzeit z.B. 9,6kbit/s mit GSM Höhere Verzögerungen, größere Schwankungen: -Verbindungsaufbau via GSM im Sekundenbereich-auch sonst einige hundert Millisekunden Geringere Sicherheit gegenüber Abhören, aktive Attacken: -Luftschnittstelle ist für jeden einfach zugänglich-Basisstationen können vorgetäuscht werdenStets geteiltes Medium:"
+      }
+    ]
+  }
   ]
 }
