@@ -20,7 +20,6 @@
       "name": "whacmole",
       "rating": "all",
       "maxtime": 15,
-      "endonlyontimeout": true,
       "sets": [
         {
 
