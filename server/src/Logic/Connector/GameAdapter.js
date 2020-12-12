@@ -32,18 +32,19 @@ module.exports = class GameAdapter{
 		this.ss.sendMessage(returnMessage, null);
 	}
 
-	startedGame(){
-		this.sendStateUpdate("INGAME");
+	startedGame(roundCount){
+		this.sendStateUpdate("INGAME", roundCount);
 	}
 
-	finishGame(){
-		this.sendStateUpdate("FINISHED");
+	finishGame(roundCount){
+		this.sendStateUpdate("FINISHED", roundCount);
 	}
 
-	sendStateUpdate(gamestate){
+	sendStateUpdate(gamestate, roundCount){
 		var returnMessage = new Object({
 			packet: "gamestate",
-			gamestate: gamestate
+			gamestate: gamestate,
+			roundcount: roundCount
 		});
 		this.ss.sendMessage(returnMessage, null);
 	}

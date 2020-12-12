@@ -9,6 +9,7 @@ module.exports = class GameLogic extends EventEmitter{
     this.ps = ps;
     this.rm = rm;
     this.plaiedGames = new Map();
+    this.roundCount = 3;
     var games = GameUtil.readGames();
     this.gs = new GameSelector(games);
 
@@ -20,13 +21,13 @@ module.exports = class GameLogic extends EventEmitter{
     this.gameTasks = this.gs.generateTasks(this.roundCount);
     this.currentRound = 0;
     this.ps.resetScores();
-    this.emit("startGame");
+    this.emit("startGame", this.roundCount);
     this.nextRound();
   }
 
   nextRound(){
     if(this.roundCount <= this.currentRound){
-      this.emit("finishGame");
+      this.emit("finishGame", this.roundCount);
       return;
     }
     var task = this.gameTasks[this.currentRound];
