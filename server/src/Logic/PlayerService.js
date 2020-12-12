@@ -87,6 +87,7 @@ module.exports = class PlayerService extends EventEmitter{
 		var updatePlayers = scores.map(item => {
 			var player = item.player;
 			player.score+= item.score;
+			player.roundscore = item.score;
 			return player;
 		});
 		return updatePlayers;
