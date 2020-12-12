@@ -30,16 +30,10 @@ module.exports = class GameSelector{
       return this.appendAvaibleTasks();
 
     var task = this.selectRandomTask(tasksets);
-    var taskset = this.selectRandomSet(tasksets, task)
+    var taskset = this.selectRandomSet(tasksets, task);
     var taskset = this.makeAdditionalSettings(taskset, task);
+    this.appendToTasks(task, taskset);
 
-    this.genTasks.push(new Object({
-      name: task.name,
-      rating: task.rating,
-      maxtime: task.maxtime,
-      endonlyontimeout: task.endonlyontimeout,
-      parameters: taskset
-    }));
     if(this.genTasks.length >= this.roundCount)
       return;
 
@@ -47,6 +41,16 @@ module.exports = class GameSelector{
       tasksets.splice(task.index, 1);
 
     this.appendSet(tasksets);
+  }
+
+  appendToTasks(task, taskset){
+    this.genTasks.push(new Object({
+      name: task.name,
+      rating: task.rating,
+      maxtime: task.maxtime,
+      endonlyontimeout: task.endonlyontimeout,
+      parameters: taskset
+    }));
   }
 
   selectRandomTask(tasksets){

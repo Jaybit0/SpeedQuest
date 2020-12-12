@@ -2,16 +2,21 @@
 const EventEmitter = require('events');
 const GameUtil = require('./GameUtil.js');
 const GameSelector = require('./GameSelector.js');
+const ScriptedGameSelector = require('./ScriptedGameSelector.js');
 
 module.exports = class GameLogic extends EventEmitter{
-  constructor(ps, rm){
+  constructor(ps, rm, key){
     super();
     this.ps = ps;
     this.rm = rm;
     this.plaiedGames = new Map();
     this.roundCount = 3;
     var games = GameUtil.readGames();
-    this.gs = new GameSelector(games);
+    
+    if(key == "TEST")
+      this.gs = new ScriptedGameSelector(games);
+    else
+      this.gs = new GameSelector(games);
 
   	rm.on("finishTask", this.finishRound.bind(this));
   }

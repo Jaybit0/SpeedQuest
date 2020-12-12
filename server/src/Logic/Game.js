@@ -18,7 +18,7 @@ module.exports = class Game extends EventEmitter{
     this.ps = new PlayerService();
 
     this.rm = new RoundManager();
-    this.gl = new GameLogic(this.ps, this.rm);
+    this.gl = new GameLogic(this.ps, this.rm, key);
 
 
     //Connectors
