@@ -60,6 +60,7 @@
 	 {
       "name": "collectitems",
       "rating": "all",
+	  "endonlyontimeout": true,
       "maxtime": 20,
       "sets": [
         {
