@@ -26,24 +26,11 @@ module.exports = class HttpServer{
 
 	async joinReq(req, res){
 		var key = null;
-		if("key" in req.body && req.body.key != null && req.body.key.length == 4)
-			key = req.body.key;
-		else
-			key = this.makeKey(4);
-			
+
+		var key = this.gm.verifyKey(req.body.key);
     var name = this.gm.getGame(key).newPlayer(req.body.name);
 		var token = this.tm.createToken(name, key);
 		res.redirect("/game?token=" + token);
-	}
-
-	makeKey(length) {
-	   var result           = '';
-	   var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-	   var charactersLength = characters.length;
-	   for ( var i = 0; i < length; i++ ) {
-	      result += characters.charAt(Math.floor(Math.random() * charactersLength));
-	   }
-	   return result;
 	}
 
 }

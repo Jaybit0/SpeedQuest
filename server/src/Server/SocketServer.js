@@ -42,8 +42,8 @@ module.exports = class SocketServer{
 			var token = params.get("token");
 			return this.tm.verifyToken(token);
 		}else if(params.has("name") && params.has("gamekey")){
+			var gamekey = this.gm.verifyKey(params.get("gamekey"));
 			var name = params.get("name");
-			var gamekey = params.get("gamekey");
  			var name = this.gm.getGame(gamekey).newPlayer(name);
 			return new Object({userId: name, key: gamekey});
 		}else {

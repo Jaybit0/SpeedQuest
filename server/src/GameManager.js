@@ -27,4 +27,23 @@ module.exports = class GameManager{
   resetGame(key){
     this.games.delete(key);
   }
+
+	verifyKey(key){
+		if(key == null || key.length != 4)
+			key = this.makeKey(4);
+		else
+			key = key.toUpperCase();
+
+		return key;
+	}
+
+	makeKey(length) {
+		 var result           = '';
+		 var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+		 var charactersLength = characters.length;
+		 for ( var i = 0; i < length; i++ ) {
+				result += characters.charAt(Math.floor(Math.random() * charactersLength));
+		 }
+		 return result;
+	}
 }
