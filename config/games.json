@@ -145,12 +145,12 @@
   	  "maxtime": 10,
       "sets": [
         {
-          "question": "Was ist 4*12?",
-          "answer1": "26",
-          "answer2": "46",
-          "answer3": "62",
-          "answer4": "48",
-          "correct": 4
+          "question": "Welcher Fakt über ALOHA Netzzugriffverfahren richtig?",
+          "answer1": "Sender prüft die Leitung vor dem Senden",
+          "answer2": "Es wurde auf Hawai erfunden",
+          "answer3": "Feste Slots fürs senden",
+          "answer4": "Nachrichten können sich überschneiden",
+          "correct": 2
         }
       ]
   	},
