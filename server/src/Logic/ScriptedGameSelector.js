@@ -22,7 +22,7 @@ module.exports = class ScriptedGameSelector extends GameSelector{
     this.addTask("question", 0);
     this.addTask("whacmole", 0);
     this.addTask("opensafe", 0);
-
+    this.addTask("collectitems", 0);
   }
 
   addTask(taskname, setIndex){
