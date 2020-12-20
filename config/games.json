@@ -207,36 +207,18 @@
     "maxtime": 25,
     "sets": [
       {
-        "word1": "Akquisition",
-		"word2": "Delegierter",
-		"word3": "Empathie"
-        },
-		{
-        "word1": "Mandarine",
-		"word2": "Pappenstiel",
-		"word3": "Guerilla"
-        },
-		{
-        "word1": "Konkurrenz",
-		"word2": "Griesgram",
-		"word3": "Silhouette"
-        },
-		{
-        "word1": "Pinnwand",
-		"word2": "Karussell",
-		"word3": "Satellit"
-        },
-		{
-        "word1": "Ressource",
-		"word2": "Mobiliar",
-		"word3": "Gelatine"
-        },
-		{
-        "word1": "Platzierung",
-		"word2": "Stegreif",
-		"word3": "Reparatur"
+   
         }
-    ]
+    ],
+	"setsAdditional": [
+  	    {
+    		  "field": "seed",
+          "type": "random",
+    		  "from": 0,
+    		  "to": 2147483647,
+    		  "numberType": "int"
+    		}
+      ]
   }
   ]
 }
