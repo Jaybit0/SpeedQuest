@@ -129,23 +129,25 @@
   	  "maxtime": 10,
       "sets": [
         {
-          "question": "Welcher Fakt über ALOHA Netzzugriffverfahren richtig?",
+          "question": "SERVER Welcher Fakt über ALOHA Netzzugriffverfahren richtig?",
           "answer1": "Sender prüft die Leitung vor dem Senden",
           "answer2": "Es wurde auf Hawai erfunden",
           "answer3": "Feste Slots fürs senden",
           "answer4": "Nachrichten können sich überschneiden",
+          "localizenumber": 1,
           "correct": 2
         },
         {
-          "question": "Was geschieht beim Zeitmultiplexing?",
+          "question": "SERVER Was geschieht beim Zeitmultiplexing?",
           "answer1": "Jeder hat ein Zeitfenster",
           "answer2": "Jeder darf immer senden",
           "answer3": "Jeder sendet auf einer eignen Frequenz",
           "answer4": "Überschneidungen sind kein Problem",
+          "localizenumber": 2,
           "correct": 1
         },
         {
-          "question": "Wofür ist die Puls-Code-Modulation?",
+          "question": "SERVER Wofür ist die Puls-Code-Modulation?",
           "answer1": "Leitungscodes bestimmen",
           "answer2": "Farbnotation für LAN-Kabel",
           "answer3": "Analoge Signale Digital übertragen",
@@ -191,7 +193,7 @@
     "maxtime": 25,
     "sets": [
       {
-   
+
         }
     ],
 	"setsAdditional": [
