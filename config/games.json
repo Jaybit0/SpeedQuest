@@ -1,22 +1,6 @@
 {
   "tasks": [
     {
-      "name": "fastclick",
-      "rating": "all",
-      "maxtime": 15,
-      "sets": [
-        {
-          "clickcount": 10
-        },
-        {
-          "clickcount": 5
-        },
-        {
-          "clickcount": 15
-        }
-      ]
-    },
-    {
       "name": "whacmole",
       "rating": "all",
       "maxtime": 15,
